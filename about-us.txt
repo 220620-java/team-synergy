@@ -1,3 +1,6 @@
-# About us
+My name is Devin and this is my first time using Git.
+My name is Barry Norton and I have 7 dogs
+Mike: I ate toast with peanut butter for breakfast.
+This is Raza
 
 My name is Colby Tang and I love to develop back-end software and video games.
