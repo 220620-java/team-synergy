@@ -73,8 +73,26 @@ public class ArrayList implements List {
 
 	@Override
 	public int indexOf(Object obj) {
+		/*Local Variable*/
+		int index = 0;
+		Boolean exitArr = false;
 		
-		return 0;
+		/*Function*/
+		do {
+			if (index >= arrList.length) {
+				if(arrList[index] = obj) {
+					exitArr == true;
+				}
+				else {
+					index++;
+				}
+			}
+			else { 
+				System.out.println("Object not found");
+				index = -1
+			}
+		}while (exitArr == false);
+		return index;
 	}
 
 }
