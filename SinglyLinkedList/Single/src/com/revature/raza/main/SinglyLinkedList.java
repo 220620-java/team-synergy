@@ -35,8 +35,24 @@ class SinglyLinkedList implements List {
 
 	@Override
 	public Object get(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		if(this.head == null) {
+			System.out.println("empty list");
+			return null;
+		}
+		else {
+			
+			Node current = head;
+			int counter = 1;
+			while(current.nextNode != null) {
+				if(index == counter) {
+					current = current.nextNode;
+					break;
+				}
+				current = current.nextNode;
+				counter++;
+			}
+			return current.data;
+		}	
 	}
 
 	@Override
