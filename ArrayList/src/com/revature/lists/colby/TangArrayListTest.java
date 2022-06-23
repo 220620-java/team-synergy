@@ -1,4 +1,4 @@
-package com.revature.colby;
+package com.revature.lists.colby;
 
 // Junit imports
 import static org.junit.Assert.assertEquals;
@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.*;
 
-import com.revature.ds.List;
+import com.revature.lists.ds.List;
 
 public class TangArrayListTest {
 

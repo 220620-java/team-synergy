@@ -1,8 +1,8 @@
-package com.revature.colby;
+package com.revature.lists.colby;
 
 import java.util.Arrays;
 
-import com.revature.ds.List;
+import com.revature.lists.ds.List;
 
 public class TangArrayList implements List {
 
