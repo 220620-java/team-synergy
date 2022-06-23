@@ -52,6 +52,7 @@ public class TangArrayList implements List {
         Object deletedObject = arr[index];
         if (index > size || index < 0) {
             System.out.println ("OUT OF RANGE!");
+            throw new IndexOutOfBoundsException(index);
             return null;
         }
 
