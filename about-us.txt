@@ -1,0 +1,10 @@
+My name is Barry Norton and I have 7 dogs
+This is Raza
+
+ Hello, my name is Anwar and I am from LA. 
+ 
+My name is Devin and this is my first time using Git.
+
+Mike: I ate toast with peanut butter for breakfast.
+
+My name is Colby Tang and I love to develop back-end software and video games.
