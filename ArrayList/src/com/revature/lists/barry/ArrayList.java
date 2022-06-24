@@ -1,4 +1,4 @@
-package com.revature.training.main;
+package com.revature.training.datastructures;
 
 public class ArrayList implements List {
 	/*Class Variables*/
@@ -56,7 +56,7 @@ public class ArrayList implements List {
 		String error = "The index you requested does not exist in the array";
 		
 		/*Function*/
-		if (index > (arrList.length - 1) || index < 0) {
+		if (index >= arrList.length || index < 0) {
 			result = error;
 		}
 		else {
@@ -66,22 +66,44 @@ public class ArrayList implements List {
 	}
 
 	@Override
-	public Object delete(int index) {
-		// TODO Auto-generated method stub
-		return null;
+	public Object delete(int omitIndex) {
+		/*Local Variables*/
+		Object result;
+		int arrIndex = 0;
+		String error = "The index you requested does not exist in the array";
+		
+		/*Function*/
+		if (omitIndex >= arrList.length || omitIndex < 0) {
+			result = error;
+		}
+		else {
+			arrListTemp = new Object[arrList.length];
+			for (Object o: arrList){
+				if (arrIndex >= omitIndex) {
+					arrListTemp[arrIndex] = arrList[arrIndex + 1];
+				}
+				else {
+					arrListTemp[arrIndex] = arrList[arrIndex];
+				}
+				arrIndex++;
+			}
+			arrList = arrListTemp;
+			result = arrList;
+		}			
+		return result;
 	}
 
 	@Override
 	public int indexOf(Object obj) {
-		/*Local Variable*/
+		/*Local Variables*/
 		int index = 0;
 		Boolean exitArr = false;
 		
 		/*Function*/
 		do {
 			if (index >= arrList.length) {
-				if(arrList[index] = obj) {
-					exitArr == true;
+				if(arrList[index] == obj) {
+					exitArr = true;
 				}
 				else {
 					index++;
@@ -89,7 +111,7 @@ public class ArrayList implements List {
 			}
 			else { 
 				System.out.println("Object not found");
-				index = -1
+				index = -1;
 			}
 		}while (exitArr == false);
 		return index;
