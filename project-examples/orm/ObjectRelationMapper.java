@@ -16,10 +16,14 @@ import java.util.stream.Stream;
  * @author Team Synergy
  */
 public class ObjectRelationMapper {
-    public static String database;
-    public static String table;
-    
-    public static String insertObject (Object obj) {
+            // Call method example: String sqlQuery = ObjectRelationMapper.insertObject(student, "users");
+        // Returns something like
+        // INSERT INTO users (id,firstName,lastName,username,email,userType,salt,major,gpa) VALUES (?,?,?,?,?,?,?,?,?);
+    /**
+     * Takes an object and returns an SQL insert statement to insert into database.
+     * @param
+     */
+    public static String insertObject (Object obj, String tableName) {
         Class<?> objClass = obj.getClass();
         Field[] fields = objClass.getDeclaredFields();
         
@@ -38,7 +42,7 @@ public class ObjectRelationMapper {
         .toArray(Field[]::new);
         
         // Create the insert fields
-        String returnQuery = "INSERT INTO (";
+        String returnQuery = "INSERT INTO " + tableName + " (";
         StringJoiner joiner = new StringJoiner(",");
         Stream<Field> fieldsStream = Arrays.stream(fields);
         fieldsStream.forEach(field -> joiner.add(field.getName()));
@@ -52,5 +56,7 @@ public class ObjectRelationMapper {
         returnQuery += joiner2.toString();
         returnQuery += ");";
         return returnQuery;
+
+
     }
 }
